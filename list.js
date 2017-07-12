@@ -7,4 +7,4 @@
 });
 
 var heading = document.createElement('h2');
-heading.innertext = post.data.tile 
+heading.innertext = post.data.tile;  
