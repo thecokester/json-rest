@@ -30,7 +30,7 @@ function processRequest(e) {
     if (httpRequest.readyState == 4 && httpRequest.status == 200) {
         var data = e.target.response;
         var parsedData = JSON.parse(data);
-
+console.log(parsedData)
         var posts = parsedData.data.children;
 
         posts.forEach(function(post) {
@@ -42,10 +42,11 @@ function processRequest(e) {
             document.body.appendChild(postBody);
 
         var link = document.createElement('a')
-       link.setAttribute('href', 'single.html', + '?link=' + post.data.permalink );
+       link.setAttribute('href', 'single.html?url=https://www.reddit.com' + post.data.permalink );
        link.style.width = '300px';
        document.body.appendChild(link);
        link.appendChild(heading);
+       console.log(post.data.permalink)
         });
 
 
